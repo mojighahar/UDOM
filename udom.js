@@ -114,13 +114,13 @@ NodeList.prototype.removeClass = function(name) {
 Element.prototype.append = function(html){
 	var parent = document.createElement('template');
 	parent.innerHTML = html;
-	if(parent.children.length == 1)
-		return this.appendChild(parent.children[0]);
+	if(parent.content.children.length == 1)
+		return this.appendChild(parent.content.children[0]);
 	else{
 		var appended = [];
-		for (var i = 0; i < parent.children.length; i++){
-			appended.push(parent.children[i]);
-			this.appendChild(parent.children[i]);
+		for (var i = 0; i < parent.content.children.length; i++){
+			appended.push(parent.content.children[i]);
+			this.appendChild(parent.content.children[i]);
 		}
 		return appended;
 	}
