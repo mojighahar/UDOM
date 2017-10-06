@@ -1,5 +1,5 @@
 /*
- * QuerySelectors
+ *	QuerySelectors
  */
 
 var M=function(selector, parent){
@@ -50,7 +50,7 @@ Element.prototype.catch = function(event, selector, callback){
 };
 
 /*
- * MultiElement events
+ *	MultiElement events
  */
 
 NodeList.prototype.listen = function(event, callback){
@@ -127,7 +127,7 @@ Element.prototype.append = function(html){
 }
 
 /*
- * Utils
+ *	Utils
  */
 
 NodeList.prototype.has = function (element) {
