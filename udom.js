@@ -50,7 +50,7 @@ Element.prototype.catch = function(event, selector, callback){
 };
 
 /*
- *	MultiElement events
+ * MultiElement events
  */
 
 NodeList.prototype.listen = function(event, callback){
