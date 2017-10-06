@@ -112,9 +112,7 @@ NodeList.prototype.removeClass = function(name) {
  */
 
 Element.prototype.append = function(html){
-	var container=document.createElement('TABLE');
-	container.innerHTML = '<tbody><tr><td></td></tr></tbody>';
-	var parent = container.findS('td');
+	var parent = documen.createElement('template');
 	parent.innerHTML = html;
 	if(parent.children.length == 1)
 		return this.appendChild(parent.children[0]);
