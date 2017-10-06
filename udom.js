@@ -112,7 +112,7 @@ NodeList.prototype.removeClass = function(name) {
  */
 
 Element.prototype.append = function(html){
-	var parent = document.createElement('DIV');
+	var parent = document.createElement('TABLE');
 	parent.innerHTML = html;
 	if(parent.children.length == 1)
 		return this.appendChild(parent.children[0]);
