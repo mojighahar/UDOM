@@ -22,6 +22,11 @@ Element.prototype.findS = function(selector) {
 	return S(selector, this);
 };
 
+Element.prototype.find = function(selector) {
+	var elements = M(selector, this);
+	return (elements.length == 1)? elements[0] : elements;
+};
+
 /**
  *	Event Appliers 
  */
