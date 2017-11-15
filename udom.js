@@ -116,6 +116,8 @@ NodeList.prototype.removeClass = function(name) {
  *	Append
  */
 
+//TODO: add element insert support
+
 Element.prototype.append = function(html){
 	var parent = document.createElement('template');
 	parent.innerHTML = html;
@@ -126,6 +128,36 @@ Element.prototype.append = function(html){
 		for (var i = 0; i < parent.content.children.length; i++){
 			appended.push(parent.content.children[i]);
 			this.appendChild(parent.content.children[i]);
+		}
+		return appended;
+	}
+}
+
+Element.prototype.before = function(html){
+	var parent = document.createElement('template');
+	parent.innerHTML = html;
+	if(parent.content.children.length == 1)
+		return this.parentNode.insertBefore(parent.content.children[0], this);
+	else{
+		var appended = [];
+		for (var i = 0; i < parent.content.children.length; i++){
+			appended.push(parent.content.children[i]);
+			this.parentNode.insertBefore(parent.content.children[i], this);
+		}
+		return appended;
+	}
+}
+
+Element.prototype.after = function(html){
+	var parent = document.createElement('template');
+	parent.innerHTML = html;
+	if(parent.content.children.length == 1)
+		return this.parentNode.insertBefore(parent.content.children[0], this.nextSibling);
+	else{
+		var appended = [];
+		for (var i = 0; i < parent.content.children.length; i++){
+			appended.push(parent.content.children[i]);
+			this.parentNode.insertBefore(parent.content.children[i], this.nextSibling);
 		}
 		return appended;
 	}
